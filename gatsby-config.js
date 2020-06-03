@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `/uses`,
-    description: `A list of /uses pages detailing developer setups.`,
-    author: `@wesbos`,
-    siteUrl: 'https://uses.tech',
+    title: `BlackLivesMatter.dev`,
+    description: `Website for showcasing developers who are helping support #BlackLivesMatter. Please read before continuing.`,
+    author: `@lewismenelaws`,
+    siteUrl: "https://blacklivesmatter.dev",
   },
   plugins: [
     {
@@ -21,10 +21,10 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#fff`,
+        theme_color: `#000`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon-16x16.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,

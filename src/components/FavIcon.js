@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from "react";
 
 function useInterval(callback, delay) {
   const savedCallback = useRef();
@@ -21,23 +21,23 @@ function useInterval(callback, delay) {
 }
 
 function useWickedFavIcon() {
-  const letters = [...'/USES!💩'];
+  const letters = [..."/USES!💩"];
   const [index, setIndex] = useState(0);
   const canvasRef = useRef(0);
   useInterval(() => {
     setIndex(index >= letters.length - 1 ? 0 : index + 1);
     const letter = letters[index];
     const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
-    ctx.fillStyle = '#203447';
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#203447";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#ffc600';
+    ctx.fillStyle = "#ffc600";
     ctx.font = `310px monospace`;
     ctx.fillText(letter, 10, canvas.height - 10);
-    const data = canvas.toDataURL('image/png');
+    const data = canvas.toDataURL("image/png");
 
     const link = document.querySelector("link[rel*='icon']");
-    link.type = 'image/x-icon';
+    link.type = "image/x-icon";
     link.href = data;
   }, 350);
   return { letter: letters[index], index, canvasRef };
@@ -48,7 +48,7 @@ export default function FavIcon() {
   return (
     <div>
       <canvas
-        style={{ border: '1px solid yellow' }}
+        style={{ backgroundColor: "black" }}
         ref={canvasRef}
         width="200"
         height="200"

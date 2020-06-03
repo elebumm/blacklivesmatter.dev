@@ -1,16 +1,14 @@
-import React, { useContext } from 'react';
-import styled from 'styled-components';
-import FilterContext from '../context/FilterContext';
-import * as icons from '../util/icons';
+import React, { useContext } from "react";
+import styled from "styled-components";
+import FilterContext from "../context/FilterContext";
+import * as icons from "../util/icons";
 
 export default function Topics() {
-  const { countries, tags, devices, currentTag, setCurrentTag } = useContext(
-    FilterContext
-  );
+  const { tags, currentTag, setCurrentTag } = useContext(FilterContext);
 
   return (
     <Tags>
-      {tags.map(tag => (
+      {tags.map((tag) => (
         <Tag
           currentTag={tag.name === currentTag}
           htmlFor={`filter-${tag.name}`}
@@ -23,51 +21,9 @@ export default function Topics() {
             id={`filter-${tag.name}`}
             value={tag.name}
             checked={tag.name === currentTag}
-            onChange={e => setCurrentTag(e.currentTarget.value)}
+            onChange={(e) => setCurrentTag(e.currentTarget.value)}
           />
           {tag.name}
-          <TagCount>{tag.count}</TagCount>
-        </Tag>
-      ))}
-
-      {countries.map(tag => (
-        <Tag
-          currentTag={tag.emoji === currentTag}
-          htmlFor={`filter-${tag.name}`}
-          key={`filter-${tag.name}`}
-          title={tag.name}
-          clickable
-        >
-          <input
-            type="radio"
-            name="tag"
-            id={`filter-${tag.name}`}
-            value={tag.emoji}
-            checked={tag.emoji === currentTag}
-            onChange={e => setCurrentTag(e.currentTarget.value)}
-          />
-          <TagEmoji>{tag.emoji}</TagEmoji>
-          <TagCount>{tag.count}</TagCount>
-        </Tag>
-      ))}
-
-      {devices.map(tag => (
-        <Tag
-          currentTag={tag.name === currentTag}
-          htmlFor={`filter-${tag.name}`}
-          key={`filter-${tag.name}`}
-          title={tag.name}
-          clickable
-        >
-          <input
-            type="radio"
-            name="computer"
-            id={`filter-${tag.name}`}
-            value={tag.name}
-            checked={tag.name === currentTag}
-            onChange={e => setCurrentTag(e.currentTarget.value)}
-          />
-          <img height="20px" src={icons[tag.name]} alt={tag.name} />
           <TagCount>{tag.count}</TagCount>
         </Tag>
       ))}
@@ -85,25 +41,26 @@ const Tags = styled.ul`
 `;
 
 const Tag = styled.label`
-  background: var(--pink);
+  background: black;
   margin: 2px;
   border-radius: 3px;
-  font-size: ${props => (props.small ? `1.2rem;` : `1.7rem;`)};
+  font-size: ${(props) => (props.small ? `1.2rem;` : `1.7rem;`)};
   padding: 5px;
   color: hsla(0, 100%, 100%, 0.8);
   transition: background-color 0.2s;
-  cursor: ${props => (props.clickable ? 'pointer' : 'default')};
+  cursor: ${(props) => (props.clickable ? "pointer" : "default")};
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
   input {
     display: none;
   }
-  ${props =>
+  ${(props) =>
     props.currentTag &&
     `
-    background: var(--yellow);
+    background: white;
     color: hsla(0, 100%, 0%, 0.8);
+    border: 1px solid black;
   `}
 `;
 

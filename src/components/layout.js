@@ -5,13 +5,13 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
+import React from "react";
+import PropTypes from "prop-types";
+import { useStaticQuery, graphql } from "gatsby";
 
-import styled, { createGlobalStyle } from 'styled-components';
-import Header from './header';
-import 'normalize.css';
+import styled, { createGlobalStyle } from "styled-components";
+import Header from "./header";
+import "normalize.css";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -39,20 +39,15 @@ const Layout = ({ children }) => {
         <footer>
           <center ya-i-used-a-center-tag="sue me">
             <p>
-              Made by <a href="https://wesbos.com">Wes Bos</a> with{' '}
-              <a href="https://www.gatsbyjs.org">Gatsby</a> ©{' '}
-              {new Date().getFullYear() - Math.floor(Math.random() * 777)}
+              Made by <a href="https://lewismenelaws.com">Lewis Menelaws</a>{" "}
+              with <a href="https://www.gatsbyjs.org">Gatsby</a>. Forked from
+              /uses by <a href="https://wesbos.com">Wes Bos</a>
             </p>
             <p>
-              Source on{' '}
-              <a href="https://github.com/wesbos/awesome-uses/">GitHub</a>. Add
-              yourself!
-            </p>
-            <p>
-              Icons from <a href="https://icons8.com">icons8.com</a>
-            </p>
-            <p>
-              Domain provided by <a href="https://get.tech/">.Tech</a>
+              Source on{" "}
+              <a href="https://github.com/elebumm/blacklivesmatter.dev/">
+                GitHub
+              </a>
             </p>
             <p>
               Hosted on <a href="https://netlify.com">Netlify</a>
@@ -80,47 +75,46 @@ const GlobalStyle = createGlobalStyle`
     --yellow: #ffc600;
     --pink: #EB4471;
     --vape: #d7d7d7;
-    background: var(--blue);
-    color: var(--vape);
-    font-family: 'Fira Mono', monospace;
+    background: white;
+    color: black;
+    font-family: 'Roboto Condensed', monospace;
     font-weight: 100;
     font-size: 10px;
     scroll-behavior: smooth;
+    background-color: #fff;
   }
   body {
     font-size: 2rem;
     overflow-y: scroll;
+    background-color: #fff;
   }
   h1,h2,h3,h4,h5,h6 {
     font-weight: 500;
   }
   a {
-    color: var(--yellow);
-    text-decoration-color: var(--pink);
-    font-style: italic;
+    color: #000;
+    font-family: 'IBM Plex';
+    font-weight: 500;
   }
   code {
     background: var(--lightblue);
   }
-  ::selection {
-    background: var(--yellow);
-    color: var(--blue);
-  }
+  
 
   body::-webkit-scrollbar {
     width: 12px;
   }
   html {
     scrollbar-width: thin;
-    scrollbar-color: var(--yellow) var(--blue);
+    scrollbar-color: black white;
   }
   body::-webkit-scrollbar-track {
-    background: var(--blue);
+    background: white;
   }
   body::-webkit-scrollbar-thumb {
-    background-color: var(--yellow) ;
+    background-color: black ;
     border-radius: 6px;
-    border: 3px solid var(--blue);
+    
   }
 `;
 

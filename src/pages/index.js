@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import styled from 'styled-components';
-import FilterContext from '../context/FilterContext';
+import React, { useContext } from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import styled from "styled-components";
+import FilterContext from "../context/FilterContext";
 
-import Layout from '../components/layout';
-import Person from '../components/Person';
-import Topics from '../components/Topics';
-import BackToTop from '../components/BackToTop';
+import Layout from "../components/layout";
+import Person from "../components/Person";
+import Topics from "../components/Topics";
+import BackToTop from "../components/BackToTop";
 
 function IndexPage() {
   const { currentTag } = useContext(FilterContext);
@@ -14,13 +14,11 @@ function IndexPage() {
     query People {
       allPerson {
         nodes {
-          computer
-          country
           description
-          emoji
+
           id
           name
-          phone
+
           tags
           twitter
           url
@@ -29,18 +27,13 @@ function IndexPage() {
     }
   `);
   const people = allPerson.nodes.filter(
-    person =>
-      currentTag === 'all' ||
-      person.tags.includes(currentTag) ||
-      currentTag === person.country ||
-      currentTag === person.computer ||
-      currentTag === person.phone
+    (person) => currentTag === "all" || person.tags.includes(currentTag)
   );
   return (
     <Layout>
       <Topics />
       <People>
-        {people.map(person => (
+        {people.map((person) => (
           <Person key={person.name} person={person} currentTag={currentTag} />
         ))}
       </People>

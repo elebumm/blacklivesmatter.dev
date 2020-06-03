@@ -1,16 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
-import { name } from 'country-emoji';
-import styled from 'styled-components';
-import { Tag, Tags } from './Topics';
-import * as icons from '../util/icons';
+import React, { useState, useEffect, useRef } from "react";
+import PropTypes from "prop-types";
+import { name } from "country-emoji";
+import styled from "styled-components";
+import { Tag, Tags } from "./Topics";
+import * as icons from "../util/icons";
 
 function useIntersectionObserver(ref) {
   const [isIntersecting, setIntersecting] = useState(false);
 
   useEffect(function() {
     const observer = new IntersectionObserver(function([entry]) {
-      console.log('Run once for every time its on screen');
+      console.log("Run once for every time its on screen");
       console.log(entry);
     });
     // Observe the element we want to observve
@@ -43,7 +43,7 @@ export default function Person({ person, currentTag }) {
           <h3>
             <a href={person.url} target="_blank" rel="noopener noreferrer">
               {person.name}
-            </a>{' '}
+            </a>{" "}
             {person.emoji}
           </h3>
           <a
@@ -53,50 +53,18 @@ export default function Person({ person, currentTag }) {
             href={person.url}
           >
             {url.host}
-            {url.pathname.replace(/\/$/, '')}
+            {url.pathname.replace(/\/$/, "")}
           </a>
         </header>
         <p>{person.description}</p>
         <Tags>
-          {person.tags.map(tag => (
+          {person.tags.map((tag) => (
             <Tag key={tag} as="li" currentTag={tag === currentTag} small>
               {tag}
             </Tag>
           ))}
         </Tags>
       </PersonInner>
-      <PersonDeets>
-        <span className="country" title={name(person.country)}>
-          {person.country}
-        </span>
-        {person.computer && (
-          <span title={`Computer: ${person.computer}`}>
-            <img
-              height="40"
-              src={icons[person.computer]}
-              alt={person.computer}
-            />
-          </span>
-        )}
-        {person.phone && (
-          <span title={`Uses an ${person.phone}`}>
-            <img height="50" src={icons[person.phone]} alt={person.phone} />
-          </span>
-        )}
-
-        {person.twitter && (
-          <TwitterHandle>
-            <a
-              href={`https://twitter.com/${person.twitter.replace('@', '')}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="at">@</span>
-              {person.twitter.replace('@', '')}
-            </a>
-          </TwitterHandle>
-        )}
-      </PersonDeets>
     </PersonWrapper>
   );
 }
@@ -111,8 +79,8 @@ Person.propTypes = {
     description: PropTypes.string,
     tags: PropTypes.arrayOf(PropTypes.string),
     country: PropTypes.string,
-    computer: PropTypes.oneOf(['apple', 'windows', 'linux']),
-    phone: PropTypes.oneOf(['iphone', 'android']),
+    computer: PropTypes.oneOf(["apple", "windows", "linux"]),
+    phone: PropTypes.oneOf(["iphone", "android"]),
     twitter(props, propName, componentName) {
       if (!/^@?(\w){1,15}$/.test(props[propName])) {
         return new Error(
@@ -126,9 +94,8 @@ Person.propTypes = {
 
 // Component Styles
 const PersonWrapper = styled.div`
-  border: 1px solid var(--vape);
-  border-radius: 5.34334px;
-  box-shadow: 10px -10px 0 var(--blue2);
+  border: 3px solid black;
+  border-radius: 0;
   display: grid;
   grid-template-rows: 1fr auto auto;
 `;
@@ -138,7 +105,7 @@ const PersonInner = styled.div`
   h3 {
     margin: 0;
     a:visited {
-      color: var(--purple);
+      color: black;
     }
   }
   header {
@@ -167,7 +134,7 @@ const PersonInner = styled.div`
       overflow: hidden;
       :hover,
       :visited {
-        color: var(--pink);
+        color: black;
       }
     }
   }
@@ -190,7 +157,7 @@ const PersonDeets = styled.div`
     }
   }
   a {
-    color: var(--vape);
+    color: black;
   }
   .country {
     font-size: 3rem;
