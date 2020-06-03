@@ -7,6 +7,9 @@ import Modal from "react-modal";
 import FavIcon from "./FavIcon";
 
 const customStyles = {
+  overlay: {
+    overflowY: "scroll",
+  },
   content: {
     top: "50%",
     left: "50%",
@@ -44,7 +47,7 @@ function Header({ siteTitle, siteDescription, siteUrl }) {
           contentLabel="Disclaimer"
         >
           <button onClick={() => setModalOpen(false)}>close</button>
-          <h1>What is BlackLivesMatter.dev</h1>
+          <h1 className="modal-header">What is BlackLivesMatter.dev</h1>
           <p>
             BlackLivesMatter.dev is a website for developers to showcase their
             support for the Black Lives Matter movement. It is an open source
@@ -53,26 +56,28 @@ function Header({ siteTitle, siteDescription, siteUrl }) {
             <a href="https://blacklivesmatter.com">#BlackLivesMatter</a>{" "}
             organization.
           </p>
-          <h1>How can I help?</h1>
+          <h1 className="modal-header">How can I help?</h1>
           <p>
             If you are looking to help with the #BlackLivesMatter foundation,
             You can donate to #BlackLivesMatter and spread the word on your
             social media. For help specifically with BlackLivesMatter.dev. You
             can visit us on Github for more information.
           </p>
-          <h1>Can I insert my name on this site?</h1>
+          <h1 className="modal-header">Can I insert my name on this site?</h1>
           <p>
             Yes you can. You can make a pull request for this github repository
             and insert your name. Please use whatever tag you feel fit, however,
             please note that your pull request will be reviewed before merging
             into the main code base.
           </p>
-          <h1>How do I get to the top of the list?</h1>
+          <h1 className="modal-header">How do I get to the top of the list?</h1>
           <p>
             All people are randomized in the build process. Meaning every time
             someone is added (or removed), the list is randomized again.
           </p>
-          <h1>I have more questions that this doesn't answer</h1>
+          <h1 className="modal-header">
+            I have more questions that this doesn't answer
+          </h1>
           <p>
             Understandable. Feel free to tweet me at{" "}
             <a href="https://twitter.com/LewisMenelaws">@Lewis Menelaws</a> or
@@ -120,6 +125,9 @@ const HeaderWrapper = styled.header`
   @media (max-width: 830px) {
     h1 {
       font-size: 2rem;
+    }
+    span {
+      display: none;
     }
   }
 `;

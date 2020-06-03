@@ -7,6 +7,14 @@ module.exports = [
     twitter: '@lewismenelaws',
     tags: ['Donations', 'Support', 'Developer'],
   },
+  {
+    name: 'Emma Bostian',
+    description:
+      'Emma will be donating all proceeds from the presale of her next e-book to organizations supporting the Black community.',
+    url: 'https://twitter.com/EmmaBostian/status/1267534654741110785',
+    twitter: '@emmabostian',
+    tags: ['Donations', 'Support', 'Developer', 'Funds'],
+  },
 
   {
     name: 'The React Core Team',
@@ -88,6 +96,44 @@ module.exports = [
     url: 'https://twitter.com/hackernoon/status/1267867052712374275',
     twitter: '@hackernoon',
     tags: ['Publication', 'Support'],
+  },
+  {
+    name: 'Shopify',
+    description: 'Shopify is helping shouting-out black creators on Twitter.',
+    url: 'https://twitter.com/Shopify/status/1268165028152258570',
+    twitter: '@shopify',
+    tags: ['Corporate', 'Support'],
+  },
+  {
+    name: 'HumbleBundle',
+    description:
+      'Humble Bundle announced a $1 million fund to help publish games by Black game developers.',
+    url: 'https://twitter.com/humble/status/1267863621565968384',
+    twitter: '@humble',
+    tags: ['Corporate', 'Support', 'Funds', 'Donations'],
+  },
+  {
+    name: 'Sarah Drasner',
+    description:
+      'Sarah donation-matched up to $3000 and helped raised over $12,282.74 in just 24 hours.',
+    url: 'https://twitter.com/sarah_edo/status/1267183395357880320',
+    twitter: '@sarah_edo',
+    tags: ['Developers', 'Support', 'Funds', 'Donations'],
+  },
+  {
+    name: 'GatsbyJS',
+    description: 'Gatsby is donation-matching up to $25,000.',
+    url: 'https://twitter.com/GatsbyJS/status/1267493819383271425',
+    twitter: '@gatsbyjs',
+    tags: ['Support', 'Funds', 'Donations', 'Open Source'],
+  },
+  {
+    name: 'Women Who Code',
+    description:
+      'Women Who Code lists organizations to follow to support Black Engineers',
+    url: 'https://twitter.com/WomenWhoCode/status/1268167475432218631',
+    twitter: '@womenwhocode',
+    tags: ['Support', 'Resources', 'Open Source'],
   },
   // 🚨 OH Hey! DO NOT ADD YOURSELF TO THE END OF THE ARRAY 🚨
   // 🚨 Add yourself somewhere random. This makes merging you much easier and avoids conflicts. 🚨
