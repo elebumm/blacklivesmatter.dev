@@ -118,7 +118,7 @@ module.exports = [
       'Sarah donation-matched up to $3000 and helped raised over $12,282.74 in just 24 hours.',
     url: 'https://twitter.com/sarah_edo/status/1267183395357880320',
     twitter: '@sarah_edo',
-    tags: ['Developers', 'Support', 'Funds', 'Donations'],
+    tags: ['Developer', 'Support', 'Funds', 'Donations'],
   },
   {
     name: 'GatsbyJS',
