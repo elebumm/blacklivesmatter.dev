@@ -135,6 +135,14 @@ module.exports = [
     twitter: '@womenwhocode',
     tags: ['Support', 'Resources', 'Open Source'],
   },
+  {
+    name: 'Netlify',
+    description:
+      'Netlify is donation matching up to $25,000 to organizations that support this cause.',
+    url: 'https://twitter.com/Netlify/status/1268186241754730496',
+    twitter: '@netlify',
+    tags: ['Support', 'Corporate', 'Funds'],
+  },
   // 🚨 OH Hey! DO NOT ADD YOURSELF TO THE END OF THE ARRAY 🚨
   // 🚨 Add yourself somewhere random. This makes merging you much easier and avoids conflicts. 🚨
   // Thx, luv ya - wes
